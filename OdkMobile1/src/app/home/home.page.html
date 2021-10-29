@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Page de connexion
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <form id="body" #form="ngForm" (ngSubmit)="logForm(form.value)">
+    <ion-grid>
+      <ion-row >
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div>
+            <img src="/assets/img/icon.png">
+            <h5>Se</h5>
+          </div>
+          <div >
+            <ion-item id="ip">
+              <ion-input type="text" name="login" placeholder="Votre login" ngModel ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" name="password" placeholder="Votre mot de passe" ngModel></ion-input>
+            </ion-item>
+            <br><br>
+          </div>
+          <div>
+            <ion-button size="large" type="submit" [disabled]="form.invalid" shape="round"  >Connecter</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Liste des apprenants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let l of listes">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        {{ l.prenom }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ l.nom }} &nbsp;&nbsp;&nbsp;&nbsp; {{ l.email }} &nbsp;&nbsp;&nbsp;&nbsp; {{ l.telephone }}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Bienvenue sur votre espace apprenant</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3>Bienvenue {{user.nom}} {{user.prenom}} </h3>
+  <div class="heure">
+    <h5>Connecté(e) à : </h5>
+    <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime>
+  </div>
+</ion-content>
+<ion-menu contentId="main-content" side="start"> 
+  <ion-header> 
+      <ion-toolbar translucent> 
+        <ion-title>Menu</ion-title>
+      </ion-toolbar> 
+    </ion-header>
+    <ion-content>
+      <ion-list> 
+        <ion-item [routerLink]="['/liste']">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          Apprenants
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item (click)="deco()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          Déconnexion
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main-content"> 
+</ion-router-outlet> 

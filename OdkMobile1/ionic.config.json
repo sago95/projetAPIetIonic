@@ -1,0 +1,7 @@
+{
+  "name": "OdkMobile1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
