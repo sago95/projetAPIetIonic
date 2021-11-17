@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
 
   myDate: String = new Date().toISOString();
 
-  constructor(private s: AuthService, private route: Router) { 
+  constructor(private s: AuthService, private route: Router) {
   }
   
   ngOnInit(){
@@ -25,6 +25,10 @@ export class LoginPage implements OnInit {
     this.nom = this.s.getLogin();
     this.nom = this.s.getNom();
     this.prenom = this.s.getPrenom();
+
+    if(this.user==null){
+      this.route.navigateByUrl('/home')
+    }
   }
 
   remove(user) {

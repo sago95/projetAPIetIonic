@@ -11,8 +11,14 @@ export class HomePage {
   nom: String;
   prenom: String;
   login: String;
+  private user:any;
 
-  constructor(private s: AuthService, private route: Router){}
+  constructor(private s: AuthService, private route: Router){
+    this.user = JSON.parse(localStorage.getItem('userData'));
+      if(this.user!=null){
+        this.route.navigateByUrl('/login')
+      }
+  }
 
   logForm(form){
     this.s.verification(form.login, form.password)
